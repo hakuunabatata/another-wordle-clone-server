@@ -6,6 +6,24 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "mongodb"
   url      = env("DATABASE_URL")
+}
+
+type Word {
+  id   String
+  word String
+  term String
+}
+
+type Game {
+  id     String
+  answer String
+}
+
+type Try {
+  id    String
+  order Int
+  term  String
+  game  String
 }
